@@ -10,7 +10,8 @@ const con = mysql.createConnection({
   host: DB_HOST || "127.0.0.1",
   user: DB_USER || "root",
   password: DB_PASS,
-  database: DB_NAME || "todos",
+  port: 52000,
+  database: DB_NAME || "books",
   multipleStatements: true
 });
 
@@ -18,10 +19,10 @@ con.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
 
-  let sql = "DROP TABLE if exists items; CREATE TABLE items(id INT NOT NULL AUTO_INCREMENT, text VARCHAR(40) not null, complete BOOLEAN, PRIMARY KEY (id));";
+  let sql = "DROP TABLE if exists books; CREATE TABLE books(id INT NOT NULL AUTO_INCREMENT, title VARCHAR(200) not null, author VARCHAR(150), genre VARCHAR (150), totalpages VARCHAR(100), description VARCHAR(2000), PRIMARY KEY (id));";
   con.query(sql, function (err, result) {
     if (err) throw err;
-    console.log("Table creation `items` was successful!");
+    console.log("Table creation `books` was successful!");
 
     console.log("Closing...");
   });
