@@ -8,28 +8,28 @@ export default function NavBar() {
       <div className="header text-2xl text-center md:px-6 tracking-wide font-archivo-black">
         matilda
       </div>
-      <div className="nav--bar w-full block flex-grow lg:flex lg:items-center md:px-20 my-2 lg:text-sm lg:my-0 font-semibold font-color:black tracking-wide pb-1">
+      <div className="nav--bar w-full block flex-grow flex items-center md:px-20 my-2 text-sm my-0 font-semibold font-color:black tracking-wide pb-1">
         <a
           href="/"
-          className="lg:mx-10 border-b-2 border-transparent hover:border-green-500"
+          className="mx-10 border-b-2 border-transparent hover:border-green-500"
         >
           Home
         </a>
         <a
           href="/signup"
-          className="lg:mx-10 border-b-2 border-transparent hover:border-green-500"
+          className="mx-10 border-b-2 border-transparent hover:border-green-500"
         >
           Sign Up
         </a>
         <a
           href="/login"
-          className="lg:mx-10 border-b-2 border-transparent hover:border-green-500"
+          className="mx-10 border-b-2 border-transparent hover:border-green-500"
         >
           Login
         </a>
         <a
           href="/cart"
-          className="lg:mx-10 border-b-2 border-transparent hover:border-green-500"
+          className="mx-10 border-b-2 border-transparent hover:border-green-500"
         >
           <FaShoppingCart />
         </a>
