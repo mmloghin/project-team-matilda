@@ -4,25 +4,25 @@ export default function Featured() {
   const books = [
     {
       id: 1,
-      title: "",
+      title: "Title 1",
       image: "",
       category: "Detective",
     },
     {
       id: 2,
-      title: "",
+      title: "Title 2",
       image: "",
       category: "Fantasy",
     },
     {
       id: 3,
-      title: "",
+      title: "Title 3",
       image: "",
       category: "Animals",
     },
     {
       id: 4,
-      title: "",
+      title: "Title 4",
       image: "",
       category: "Pictures",
     },
@@ -35,7 +35,7 @@ export default function Featured() {
       </div>
       {books.map((book, index) => (
         <div className="cards text-center my-20" key={index}>
-          {book.category}
+          {book.title}
         </div>
       ))}
     </div>
