@@ -1,12 +1,12 @@
 import React from "react";
 import Hero from "../components/Hero";
-import Cards from "../components/Cards";
+import Featured from "../components/Featured";
 
 export default function Home() {
   return (
     <div>
       <Hero />
-      <Cards />
+      <Featured />
     </div>
   );
 }
