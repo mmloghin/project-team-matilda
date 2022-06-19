@@ -8,7 +8,7 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Cart from "./pages/Cart";
 
-function App() {
+function App(){
   return (
     <div>
       <NavBar />
