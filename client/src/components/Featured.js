@@ -1,4 +1,5 @@
 import React from "react";
+import Product from "../components/Product";
 
 export default function Featured() {
   const books = [
@@ -6,36 +7,39 @@ export default function Featured() {
       id: 1,
       title: "Harry Potter and the Philosopher's Stone",
       image: "https://pictures.abebooks.com/isbn/9780747532699-es.jpg",
-      category: "Detective",
+      // category: "Detective",
     },
     {
       id: 2,
-      title: "Title 2",
-      image: "",
-      category: "Fantasy",
+      title: "Harry Potter and the Chamber of Secrets",
+      image: "https://i.ebayimg.com/images/g/-QkAAOSw1DlgjpGq/s-l500.jpg",
+      // category: "Fantasy",
     },
     {
       id: 3,
-      title: "Title 3",
-      image: "",
-      category: "Animals",
+      title: "Harry Potter and Prisoner of Azkaban",
+      image: "https://pictures.abebooks.com/isbn/9780747542155-es.jpg",
+      // category: "Animals",
     },
     {
       id: 4,
-      title: "Title 4",
-      image: "",
-      category: "Pictures",
+      title: "Charlie and the Chocolate Factory",
+      image: "https://images-na.ssl-images-amazon.com/images/I/91e3-T2IrdL.jpg",
+      // category: "Pictures",
     },
   ];
 
   return (
-    <div className="categories--container">
+    <div className="featured--container items-center">
       <div className="books--heading text-4xl sm:text-4xl font-black tracking-wide text-center mt-8">
         Featured Books
       </div>
+
       {books.map((book, index) => (
-        <div className="cards text-center my-20" key={index}>
+        <div className="cards my-20 h-full flex-col sm:border max-w-sm relative focus:outline-none flex flex-col sm:items-center" key={index}>
           {book.title}
+          <img src={book.image} alt="images" />
+          <Product />
         </div>
       ))}
     </div>
