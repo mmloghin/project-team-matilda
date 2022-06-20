@@ -4,20 +4,20 @@ import { useStateValue } from '../StateProvider'
 
 function Product({id, title, image, price, rating}){
     
-    // const [{basket}, dispatch] = useStateValue();
+    const [{basket}, dispatch] = useStateValue();
 
-    // const addToBasket = () => {
-    //     dispatch({
-    //     type: 'ADD_TO_BASKET',
-    //       item: {
-    //         id: id,
-    //         title:title,
-    //         image: image,
-    //         price: price,
-    //         rating: rating
-    //     }
-    // })
-    // }
+    const addToBasket = () => {
+        dispatch({
+        type: 'ADD_TO_BASKET',
+          item: {
+            id: id,
+            title:title,
+            image: image,
+            price: price,
+            rating: rating
+        }
+    })
+    }
 
     return (
         <div className="product">
@@ -27,7 +27,7 @@ function Product({id, title, image, price, rating}){
                 <small>$</small>
                 <strong>{price}</strong>
             </p>
-            {/* <div className="product__rating">
+            <div className="product__rating">
                 {
                     Array(rating)
                     .fill()
@@ -35,10 +35,10 @@ function Product({id, title, image, price, rating}){
                         <p>*</p>
                     ))
                 }
-            </div> */}
+            </div>
         </div>
         <img src={image} alt="harry potter"/>
-        {/* <button onClick={addToBasket}>Add to Basket</button> */}
+        <button onClick={addToBasket}>Add to Basket</button>
     </div>
     )
 }

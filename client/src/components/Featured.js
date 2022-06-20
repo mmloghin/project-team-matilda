@@ -4,8 +4,8 @@ export default function Featured() {
   const books = [
     {
       id: 1,
-      title: "Title 1",
-      image: "",
+      title: "Harry Potter and the Philosopher's Stone",
+      image: "https://pictures.abebooks.com/isbn/9780747532699-es.jpg",
       category: "Detective",
     },
     {
