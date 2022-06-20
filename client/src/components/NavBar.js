@@ -3,6 +3,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export default function NavBar() {
+
   return (
     <div className="navigation flex items-center p-6">
       <div className="header text-3xl text-center md:px-6 tracking-wide font-archivo-black">

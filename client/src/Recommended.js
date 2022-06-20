@@ -1,7 +1,7 @@
 import React from "react";
 import '../App.css';
 import Banner from '../Banner.png';
-import Product from "../components/Product";
+import Product from "./components/Product";
 
 function Recommended(){
     return(

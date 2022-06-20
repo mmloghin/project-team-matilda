@@ -1,5 +1,6 @@
 import React from "react";
 import Product from "../components/Product";
+import Banner from '../Banner.png';
 
 export default function Featured() {
   const books = [
@@ -31,10 +32,10 @@ export default function Featured() {
 
   return (
     <div className="featured--container items-center">
-      <div className="books--heading text-4xl sm:text-4xl font-black tracking-wide text-center mt-8">
+      <div className="books--heading text-4xl sm:text-4xl font-black tracking-wide text-center mt-8 mb-8">
         Featured Books
+        <img className="featured--image mt-8" alt="featured" src={Banner} />
       </div>
-
       {books.map((book, index) => (
         <div className="cards my-20 h-full flex-col sm:border max-w-sm relative focus:outline-none flex flex-col sm:items-center" key={index}>
           {book.title}
