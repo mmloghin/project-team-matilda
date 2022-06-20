@@ -1,6 +1,7 @@
 import React from "react";
 import '../App.css';
 import { useStateValue } from '../StateProvider'
+import { MdAddShoppingCart } from "react-icons/md";
 
 function Product(id, title, image, price, rating) {
 
@@ -13,7 +14,7 @@ function Product(id, title, image, price, rating) {
                 id: id,
                 title: title,
                 image: image,
-                // price: price,
+                price: price,
                 // rating: rating
             }
         })
@@ -38,7 +39,7 @@ function Product(id, title, image, price, rating) {
                 </div>
             </div>
             <img src={image} alt="harry potter" /> */}
-            <button  onClick={addToBasket}>Add to Basket</button>
+            <button  onClick={addToBasket}><MdAddShoppingCart /></button>
         </div>
     )
 }

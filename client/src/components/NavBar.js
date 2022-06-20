@@ -32,8 +32,7 @@ export default function NavBar() {
         <Link to="/cart"
           className="mx-10 border-b-2 border-transparent hover:border-yellow-500"
         > <FaShoppingCart />
-        </Link>
-       
+        </Link>      
       </div>
     </div>
   );
