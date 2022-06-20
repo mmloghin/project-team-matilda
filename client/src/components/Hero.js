@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -19,7 +20,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <div className="right--column bg-purple-200 bg-cover bg-center ml-24 h-96 h-auto w-1/2 flex-1 bg-[url('https://images.unsplash.com/photo-1591951425328-48c1fe7179cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')]"></div>
+       <Link to="/shop" className="right--column bg-purple-200 bg-cover bg-center ml-24 h-96 h-auto w-1/2 flex-1 bg-[url('https://images.unsplash.com/photo-1591951425328-48c1fe7179cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')]"></Link>
     </div>
   );
 }
