@@ -1,9 +1,9 @@
 import React from "react";
-import './App.css';
-import Banner from './Banner.png';
-import Product from "./Product";
+import '../App.css';
+import Banner from '../Banner.png';
+import Product from "../components/Product";
 
-function Home(){
+function Recommended(){
     return(
     <div className="home">
         <img className="home__image" alt="home" src={Banner}/>
@@ -18,14 +18,14 @@ function Home(){
               rating={5}
               image="https://pictures.abebooks.com/isbn/9780747532699-es.jpg"
             />
-              <Product
+              {/* <Product
               id="2"
               title="harry potter and the chamber of secrets"
               price={6.95}
               rating={4}
               image="https://i.ebayimg.com/images/g/-QkAAOSw1DlgjpGq/s-l500.jpg"
-            />
-              <Product
+            /> */}
+              {/* <Product
               id="3"
               title="harry potter and prisoner of azkaban"
               price={4.95}
@@ -54,7 +54,7 @@ function Home(){
               price={3.95}
               rating={5}
               image="https://kbimages1-a.akamaihd.net/2666df72-0af0-4a04-915d-58809409fca8/1200/1200/False/james-and-the-giant-peach-1.jpg"
-            />
+            /> */}
 
         </div>
     </div>
@@ -63,4 +63,4 @@ function Home(){
 
 
 
-export default Home;
+export default Recommended;
