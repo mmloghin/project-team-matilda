@@ -6,9 +6,9 @@ export default function NavBar() {
 
   return (
     <div className="navigation flex items-center p-6">
-      <div className="header text-3xl text-center md:px-6 tracking-wide font-archivo-black">
+      <h1 className="header text-3xl text-center md:px-6 tracking-wide font-archivo-black">
         matilda
-      </div>
+      </h1>
       <div className="nav--bar w-full block flex-grow flex items-center md:px-20 my-2 text-sm my-0 font-semibold font-color:black tracking-wide pb-1">
         <Link to="/"
           className="mx-10 border-b-2 border-transparent hover:border-yellow-500"

@@ -15,9 +15,9 @@ export default function Hero() {
             nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
             erat, sed diam voluptua.
           </div>
-          <div className="button text-center inline-block w-full sm:w-48 py-3 font-semibold tracking-wide rounded hocus:outline-none focus:shadow-outline transition duration-300 bg-purple-400 text-gray-100 hover:bg-purple-500">
+          <button className="text-center inline-block w-full sm:w-48 py-3 font-semibold tracking-wide rounded hocus:outline-none focus:shadow-outline transition duration-300 bg-purple-400 text-gray-100 hover:bg-purple-500">
             Shop Now
-          </div>
+          </button>
         </div>
       </div>
        <Link to="/shop" className="right--column bg-purple-200 bg-cover bg-center ml-24 h-96 h-auto w-1/2 flex-1 bg-[url('https://images.unsplash.com/photo-1591951425328-48c1fe7179cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')]"></Link>
