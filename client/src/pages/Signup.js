@@ -12,7 +12,7 @@ export default function Signup() {
         <form className="mx-auto max-w-xs mt-8">
           <input className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5" type="email" placeholder="Email" />
           <input className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5" type="password" placeholder="Password" />
-          <button className="mt-5 tracking-wide font-semibold bg-purple-400 text-gray-100 w-full py-4 rounded-lg hover:bg-purple-500 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none" type="submit">
+          <button className="mt-5 tracking-wide font-semibold bg-blue-400 text-gray-100 w-full py-4 rounded-lg hover:bg-blue-500 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none" type="submit">
             <span className="text">Sign Up</span>
           </button>
           <p className="mt-8 text-sm text-gray-600 text-center">
@@ -22,7 +22,6 @@ export default function Signup() {
             </Link>
           </p>
         </form>
-
       </div>
     </div>
   );
