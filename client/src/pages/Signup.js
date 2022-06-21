@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 export default function Signup() {
   return (
     <div className="signup--container min-h-screen font-medium flex justify-center -m-8">
@@ -17,7 +18,7 @@ export default function Signup() {
           <p className="mt-8 text-sm text-gray-600 text-center">
             Do you already have an account? <br></br>
             <Link to="/login" className="border-b border-gray-500 border-dotted">
-              Sign In
+              Login
             </Link>
           </p>
         </form>
