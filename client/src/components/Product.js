@@ -21,17 +21,17 @@ function Product(id, title, image, price, rating) {
     }
 
     return (
-        // <div className="product">
-        //     <div className="product__info">
-        //         <p>{title}</p>
-        //         <p className="product__price">
-        //             <small>$</small>
-        //             <strong>{price}</strong>
-        //         </p>
-        //     </div>
-        //     <img src={image} alt="image" />
-            <button onClick={addToBasket}><MdAddShoppingCart /></button>
-        // </div>
+        <div className="product">
+            <div className="product__info">
+                <p>{book.title}</p>
+                <p className="product__price">
+                    <small>$</small>
+                    <strong>{book.price}</strong>
+                </p>
+            </div>
+            <img src={book.image} alt="harry potter" />
+            <button  onClick={() => addToBasket(book)}><MdAddShoppingCart /></button>
+        </div>
     )
 }
 
