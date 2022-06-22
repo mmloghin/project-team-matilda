@@ -1,8 +1,7 @@
 import React from "react";
-import './App.css';
 import {useStateValue} from './StateProvider';
 
-function ProductCart({id,title,image,price,rating}) {
+function ProductCart({id,title,image,price}) {
     
     const [{basket}, dispatch] = useStateValue();
 
@@ -20,15 +19,6 @@ function ProductCart({id,title,image,price,rating}) {
                 <p className="productcart__title">{title}</p>
                 <p className="productcart__price">${price}</p>
         
-            <div className="productcart__rating">
-                {
-                    Array(rating)
-                    .fill()
-                    .map((_) => (
-                        <span>*</span>
-                    ))
-                }
-            </div>
             <button onClick={removeItem}>Remove item</button>
             </div>
         </div>
