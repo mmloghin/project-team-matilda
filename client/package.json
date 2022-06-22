@@ -50,7 +50,7 @@
   "babelMacros": {
     "twin": {
       "config": "tailwind.config.js"
-    },
-    "proxy": "http://localhost:5000"
-  }
+    }
+  },
+  "proxy": "http://localhost:5020"
 }
