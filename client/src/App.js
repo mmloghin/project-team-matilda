@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import NavBar from "./components/NavBar";
@@ -10,15 +10,33 @@ import Cart from "./pages/Cart";
 import Shop from "./pages/Shop";
 
 function App(){
+
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    displayBooks();
+  }, []);
+
+  const displayBooks = () => {
+      fetch('/books')
+          .then(response => response.json())
+          .then(users => {
+              setBooks(books);
+          })
+          .catch(error => {
+              console.log(error);
+          });
+  };
+
   return (
     <div>
       <NavBar />
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<Home books={books} />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/cart" element={<Cart />} />
+        <Route path="/shop" element={<Shop books={books} />} />
+        <Route path="/cart" element={<Cart books={books} />} />
       </Routes>
       < Footer />
     </div>
