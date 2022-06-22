@@ -1,45 +1,35 @@
 import React from "react";
 import '../App.css';
-import { useStateValue } from '../StateProvider'
+import { useStateValue } from "./StateProvider";
 import { MdAddShoppingCart } from "react-icons/md";
 
-function Product(id, title, image, price, rating) {
+function Product({book}) {
 
     const [basket, dispatch] = useStateValue();
 
-    const addToBasket = () => {
+    const addToBasket = (book) => {
         dispatch({
             type: 'ADD_TO_BASKET',
             item: {
-                id: id,
-                title: title,
-                image: image,
-                price: price,
-                // rating: rating
+                id: book.id,
+                title: book.title,
+                image: book.image,
+                price: book.price,
             }
         })
     }
 
     return (
         <div className="product">
-            {/* <div className="product__info">
-                <p>{title}</p>
+            <div className="product__info">
+                <p>{book.title}</p>
                 <p className="product__price">
                     <small>$</small>
-                    <strong>{price}</strong>
+                    <strong>{book.price}</strong>
                 </p>
-                <div className="product__rating">
-                    {
-                        Array(rating)
-                            .fill()
-                            .map((_) => (
-                                <p>*</p>
-                            ))
-                    }
-                </div>
             </div>
-            <img src={image} alt="harry potter" /> */}
-            <button  onClick={addToBasket}><MdAddShoppingCart /></button>
+            <img src={book.image} alt="harry potter" />
+            <button  onClick={() => addToBasket(book)}><MdAddShoppingCart /></button>
         </div>
     )
 }

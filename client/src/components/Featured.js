@@ -36,9 +36,9 @@ export default function Featured() {
       </div>
       {books.map((book, index) => (
         <div className="cards mt-10 w-full lg:w-1/2 sm:pr-10 md:pr-6 lg:pr-22 inline-grid grid-cols-3 gap-4" key={index}>
-          <div className="title text-1xl font-bold"> {book.title} </div>
-          <img src={book.image} alt="images" />
-          <Product />
+          {/* <div className="title text-1xl font-bold"> {book.title} </div>
+          <img src={book.image} alt="images" /> */}
+          <Product book = {book} />
         </div>
       ))}
     </div>
