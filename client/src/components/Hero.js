@@ -20,7 +20,7 @@ export default function Hero() {
           </Link>
         </div>
       </div>
-      <div className="right--column bg-violet-200 bg-cover bg-center ml-24 h-96 h-auto w-1/2 flex-1 bg-[url('https://tinyurl.com/y54bjxn8')]"></div>
+      <div className="right--column bg-blue-200 bg-cover bg-center ml-24 h-96 h-auto w-1/2 flex-1 bg-[url('https://res.cloudinary.com/done3n9hm/image/upload/v1655927183/hero_iggb4s.webp')]"></div>
     </div>
   );
 }
