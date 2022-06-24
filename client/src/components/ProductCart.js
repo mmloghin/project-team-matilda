@@ -1,5 +1,6 @@
 import React from "react";
 import {useStateValue} from './StateProvider';
+import '../App.css';
 
 function ProductCart({id,title,image,price}) {
     
@@ -19,7 +20,7 @@ function ProductCart({id,title,image,price}) {
                 <p className="productcart__title">{title}</p>
                 <p className="productcart__price">${price}</p>
         
-            <button onClick={removeItem}>Remove item</button>
+            <button onClick={removeItem}>Remove Item</button>
             </div>
         </div>
     )

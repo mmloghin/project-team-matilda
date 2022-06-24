@@ -1,5 +1,5 @@
 import React from "react";
-// import './App.css';
+import '../App.css';
 import { useStateValue } from "../components/StateProvider";
 import Subtotal from "../components/Subtotal";
 import ProductCart from '../components/ProductCart';
@@ -20,7 +20,7 @@ function Cart() {
                     </div>
                     ) : (
                         <div>
-                            <h2 className="shopping__basket">Items in the Cart</h2>
+                            <h2 className="shopping__basket">Items in Cart</h2>
                             {
                                 basket.map(item => (
                                     <ProductCart
@@ -37,9 +37,14 @@ function Cart() {
                 }
                
             </div>
-            <div className="checkout__right">
-                <Subtotal/>
-            </div>
+            {
+                basket.length > 0 && (
+                    <div className="checkout__right">
+                        <Subtotal/>
+                    </div>
+                )
+            }
+            
         </div>
     )
 }

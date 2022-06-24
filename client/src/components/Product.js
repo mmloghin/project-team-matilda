@@ -1,7 +1,7 @@
 import React from "react";
 import '../App.css';
 import { useStateValue } from "./StateProvider";
-import { MdAddShoppingCart } from "react-icons/md";
+
 
 function Product({book}) {
 
@@ -29,7 +29,7 @@ function Product({book}) {
                 </p>
             </div>
             <img src={book.image} alt="harry potter" />
-            <button  onClick={() => addToBasket(book)}><MdAddShoppingCart /></button>
+            <button  onClick={() => addToBasket(book)}>Add to Cart</button>
         </div>
     )
 }

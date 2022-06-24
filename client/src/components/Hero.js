@@ -7,13 +7,12 @@ export default function Hero() {
       <div className="left--column ml-8 mr-8 pl-10 py-8">
         <div className="main--content mt-24 mb-24 flex flex-col sm:items-center lg:items-stretch">
           <div className="heading text-3xl sm:text-5xl md:text-6xl font-black leading-none">
-            Buy books
-            <div className="text-blue-500">for kids.</div>
+            Amazing books
+            <div className="text-blue-500">for children</div>
+            <div className="text-blue-500">& young adults.</div>
           </div>
           <div className="description max-w-md my-5 text-lg leading-loose">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-            erat, sed diam voluptua.
+          Reading nurtures the imagination and sparks creativity. Explore our wide collection of modern and classic literature - pick your next book today & start a new adventure!
           </div>
           <Link to="/shop" className="text-center inline-block w-full sm:w-48 py-3 font-semibold tracking-wide rounded hocus:outline-none focus:shadow-outline transition duration-300 bg-blue-400 text-gray-100 hover:bg-blue-500">
             Shop Now

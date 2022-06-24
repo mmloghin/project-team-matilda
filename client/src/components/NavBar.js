@@ -1,8 +1,11 @@
 import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useStateValue } from "./StateProvider";
 
 export default function NavBar() {
+
+  const [{basket}, dispatch] = useStateValue();
 
   return (
     <div className="navigation flex items-center p-6">
@@ -32,6 +35,7 @@ export default function NavBar() {
         <Link to="/cart"
           className="mx-10 border-b-2 border-transparent hover:border-yellow-500"
         > <FaShoppingCart />
+        <span>{basket?.length}</span>
         </Link>      
       </div>
     </div>
