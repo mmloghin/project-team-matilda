@@ -16,12 +16,12 @@ const con = mysql.createConnection({
   multipleStatements: true
 });
 
-con.connect(function(err) {
+con.connect(function (err) {
   if (err) throw err;
   console.log("Connected!");
 
-  let sql = 
-  `DROP TABLE if exists books; CREATE TABLE books (id INT NOT NULL AUTO_INCREMENT, title VARCHAR(300), author VARCHAR(200), genre VARCHAR (200), pages VARCHAR(100), description VARCHAR(4000), image VARCHAR(200), PRIMARY KEY (id));
+  let sql =
+    `DROP TABLE if exists books; CREATE TABLE books (id INT NOT NULL AUTO_INCREMENT, title VARCHAR(300), author VARCHAR(200), genre VARCHAR (200), pages VARCHAR(100), description VARCHAR(4000), image VARCHAR(200), PRIMARY KEY (id));
   INSERT INTO books (title, author, genre, pages, description, image) VALUES ("Harry Potter and the Philosopher's Stone", "J.K. Rowling", "Fantasy", "223", "A young boy's life changes one stormy night when a giant with a pink umbrella tells him he was born a wizard.", "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1170803558l/72193.jpg");
   INSERT INTO books (title, author, genre, pages, description, image) VALUES ("The Lord of the Rings", "J.R.R. Tolkein", "Fantasy", "1,178", "Hobbit Frodo Baggins leaves the security of his utopian home The Shire on a big adventure when his uncle leaves behind a magical ring.", "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1566425108i/33.jpg");
   INSERT INTO books (title, author, genre, pages, description, image) VALUES ("Eragon", "Christopher Paolini", "Fantasy", "509", "Farm boy Eragon discovers a beautiful blue stone in the woods and becomes a target of a jealous and greedy King.", "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1366212852i/113436.jpg");
@@ -45,6 +45,14 @@ con.connect(function(err) {
   con.query(sql, function (err, result) {
     if (err) throw err;
     console.log("Table creation `books` was successful!");
+
+    console.log("Closing...");
+  });
+
+  let newSql = `DROP TABLE if exists users; CREATE TABLE users(id INT NOT NULL AUTO_INCREMENT, email VARCHAR(100) not null unique, password VARCHAR(64) not null, created_at datetime not null default current_timestamp, PRIMARY KEY (id));`;
+  con.query(newSql, function (err, result) {
+    if (err) throw err;
+    console.log("Table creation `users` was successful!");
 
     console.log("Closing...");
   });
