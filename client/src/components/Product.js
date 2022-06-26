@@ -28,7 +28,7 @@ function Product({book}) {
                     <strong>{book.price}</strong>
                 </p>
             </div>
-            <img src={book.image} alt="harry potter" />
+            <img src={book.image} alt="image" />
             <button  onClick={() => addToBasket(book)}>Add to Cart</button>
         </div>
     )
