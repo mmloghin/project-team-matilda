@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         "archivo-black": ["Archivo", "Space Mono"],
+        "indie-flower": ["Indie Flower", "Archivo Black", "Space Mono", "sans-serif", "cursive", "monospace"],
       },
     },
   },
