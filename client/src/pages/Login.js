@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
-// import { toast } from "react-toastify";
+import { toast, ToastContainer } from 'react-toastify'
+import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 
 export default function Login() {
@@ -25,11 +26,21 @@ export default function Login() {
         data: credentials,
       });
 
+      if (result.status === 200)
+          toast.success("Success!", {
+            position: toast.POSITION.BOTTOM_CENTER
+          });
+
+
       localStorage.setItem("token", result.token);
       console.log(result.message, result.token);
 
     } catch (err) {
       console.log(err);
+      toast.error("Email or Password is incorrect", {
+        position: toast.POSITION.BOTTOM_CENTER
+      });
+
     }
   };
 
@@ -46,6 +57,8 @@ export default function Login() {
   //   localStorage.removeItem("token");
   // };
 
+  // const navigate = useNavigate();
+
   const accessAccount = async () => {
     try {
       const result = await axios("/users/account", {
@@ -54,13 +67,17 @@ export default function Login() {
         },
       });
       console.log(result.message);
+      // if (result.status === 200) navigate("/account");
     } catch (error) {
       console.log(error);
     }
   };
 
+
   return (
     <div className="container min-h-screen font-medium flex justify-center -m-8">
+      <ToastContainer/>
+
       <div className="content mt-12 flex flex-col items-center p-6 sm:p-12">
         <h2 className="heading text-2xl xl:text-3xl font-extrabold">
           Please Login
@@ -87,7 +104,6 @@ export default function Login() {
             type="submit"
             onClick={handleSubmit}>
             Login
-
           </button>
 
           <p className="mt-8 text-sm text-gray-600 text-center">
@@ -96,6 +112,9 @@ export default function Login() {
               Sign Up
             </Link>
           </p>
+          {/* <button className="mt-10 ml-28 button flex items-center justify-center text-center" onClick={accessAccount}>
+          Your account
+        </button> */}
         </form>
       </div>
     </div>
