@@ -16,7 +16,7 @@ const con = mysql.createConnection({
   multipleStatements: true
 });
 
-con.connect(function(err) {
+con.connect(function (err) {
   if (err) throw err;
   console.log("Connected!");
 
@@ -45,6 +45,14 @@ con.connect(function(err) {
   con.query(sql, function (err, result) {
     if (err) throw err;
     console.log("Table creation `books` was successful!");
+
+    console.log("Closing...");
+  });
+
+  let newSql = `DROP TABLE if exists users; CREATE TABLE users(id INT NOT NULL AUTO_INCREMENT, email VARCHAR(100) not null unique, password VARCHAR(64) not null, created_at datetime not null default current_timestamp, PRIMARY KEY (id));`;
+  con.query(newSql, function (err, result) {
+    if (err) throw err;
+    console.log("Table creation `users` was successful!");
 
     console.log("Closing...");
   });
