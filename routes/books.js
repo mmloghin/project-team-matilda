@@ -26,4 +26,12 @@ router.get('/books', function(req, res, next) {
   .catch(err => res.status(500).send(err));
 })
 
+/* GET featured books */
+
+router.get('/books/featured', function(req, res, next) {
+  db(`SELECT * FROM books WHERE featured=true;`)
+  .then(results => res.send(results.data))
+  .catch(err => res.status(500).send(err));
+})
+
 module.exports = router;
