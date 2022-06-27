@@ -29,7 +29,7 @@ export default function Shop() {
           <h2 className="heading text-2xl xl:text-3xl font-extrabold">
             Shop         
           </h2>
-          <p className="mt-10 text-base text-center">Sail the open seas, become a powerful wizard, and even rule over magical lands. Turn the page and your next adventure awaits!</p>
+          <p className="mt-10 text-base text-center">Sail the open seas, become a powerful wizard, and even rule over magical lands. Turn the page, your next adventure awaits!</p>
       </div>
         
       <Catalogue books={books} />
