@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { MdShoppingCart } from "react-icons/md";
 import { MdManageSearch } from "react-icons/md";
-import { Multiselect } from "multiselect-react-dropdown";
+import CategoryFilter from "./CategoryFilter";
 import '../App.css';
 
 export default function Catalogue(props) {
@@ -24,11 +24,11 @@ export default function Catalogue(props) {
 
                 <form>
                     <div class="mb-6 mr-6px flex justify-center">
-                        <div className="place-items-center">
-                            <MdManageSearch size="2.5rem" />
+                        <div className="place-items-center pr-4">
+                            <MdManageSearch size="2.5rem"/>
                         </div>
-                        <input type="search" value={search} class="bg-gray-50 ml-6px border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type in a book title, author or genre" onChange={handleChange} />
-                    </div>
+                            <input type="search" value={search} class="bg-gray-50 ml-6px border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type in a book title, author or genre" onChange={handleChange}/>
+                    </div>                
                 </form>
 
             </div>
