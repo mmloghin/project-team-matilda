@@ -15,7 +15,7 @@ router.post("/register", async (req, res) => {
   if (password !== confirmPassword) return res.status(400).send({ message: "Passwords do not match" });
 
   try {
-    const hashPassword = await bcrypt.hash(email, saltRound);
+    const hashPassword = await bcrypt.hash(password, saltRound);
     await db(
       `INSERT INTO users (email, password) VALUES ("${email}", "${hashPassword}")`
     );
@@ -37,7 +37,10 @@ router.post("/login", async (req, res) => {
     if (user) {
       const userId = user.id;
 
-      // console.log(results);
+      console.log(results);
+
+      console.log(typeof password);
+
 
       const passwordIsCorrect = await bcrypt.compare(password, user.password);
       if (!passwordIsCorrect) throw new Error("Incorrect password");
