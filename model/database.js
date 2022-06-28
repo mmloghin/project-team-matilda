@@ -52,13 +52,23 @@ con.connect(function (err) {
     console.log("Closing...");
   });
 
-  let newSql = `DROP TABLE if exists users; CREATE TABLE users(id INT NOT NULL AUTO_INCREMENT, email VARCHAR(100) not null unique, password VARCHAR(64) not null, created_at datetime not null default current_timestamp, PRIMARY KEY (id));`;
-  con.query(newSql, function (err, result) {
+  // create users table 
+  let sqlUsers = `DROP TABLE if exists users; CREATE TABLE users(id INT NOT NULL AUTO_INCREMENT, email VARCHAR(100) not null unique, password VARCHAR(64) not null, created_at datetime not null default current_timestamp, PRIMARY KEY (id));`;
+  con.query(sqlUsers, function (err, result) {
     if (err) throw err;
     console.log("Table creation `users` was successful!");
 
     console.log("Closing...");
   });
+
+  //create cart table
+  // let sqlCart = `DROP TABLE if exists cart; CREATE TABLE cart(id INT NOT NULL AUTO_INCREMENT, order_id INT, price INT, PRIMARY KEY (id), FOREIGN KEY (order_id) REFERENCES books(id));`;
+  // con.query(sqlCart, function (err, result) {
+  //   if (err) throw err;
+  //   console.log("Table creation `cart` was successful!");
+
+  //   console.log("Closing...");
+  // });
 
   con.end();
 });

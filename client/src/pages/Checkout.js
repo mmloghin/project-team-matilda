@@ -4,7 +4,7 @@ import React from "react";
 export default function Account() {
     return (
         <div>
-This is a checkout page
+            This is a checkout page
         </div>
     );
 }

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 
 export default function Login() {
+
+  const navigate = useNavigate();
 
   const [credentials, setCredentials] = useState({
     email: "",
@@ -26,14 +28,13 @@ export default function Login() {
         data: credentials,
       });
 
-      if (result.status === 200)
-          toast.success("Success!", {
-            position: toast.POSITION.BOTTOM_CENTER
-          });
-
-
-      localStorage.setItem("token", result.token);
-      console.log(result.message, result.token);
+      if (result.status === 200) {
+        toast.success("Success!", {
+          position: toast.POSITION.BOTTOM_CENTER
+        });
+        localStorage.setItem("token", result.token);
+        navigate("/account");
+      }
 
     } catch (err) {
       console.log(err);
@@ -57,26 +58,23 @@ export default function Login() {
   //   localStorage.removeItem("token");
   // };
 
-  // const navigate = useNavigate();
 
-  const accessAccount = async () => {
-    try {
-      const result = await axios("/users/account", {
-        headers: {
-          authorization: "Bearer " + localStorage.getItem("token"),
-        },
-      });
-      console.log(result.message);
-      // if (result.status === 200) navigate("/account");
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
+  // const accessAccount = async () => {
+  //   try {
+  //     const result = await axios("/users/account", {
+  //       headers: {
+  //         authorization: "Bearer " + localStorage.getItem("token"),
+  //       },
+  //     });
+  //     console.log(result.message);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   return (
     <div className="container min-h-screen font-medium flex justify-center -m-8">
-      <ToastContainer/>
+      <ToastContainer />
 
       <div className="content mt-12 flex flex-col items-center p-6 sm:p-12">
         <h2 className="heading text-2xl xl:text-3xl font-extrabold">
@@ -112,9 +110,6 @@ export default function Login() {
               Sign Up
             </Link>
           </p>
-          {/* <button className="mt-10 ml-28 button flex items-center justify-center text-center" onClick={accessAccount}>
-          Your account
-        </button> */}
         </form>
       </div>
     </div>

@@ -1,10 +1,11 @@
 import React from "react";
-// import { Link } from "react-router-dom";
 
 export default function Account() {
     return (
-        <div>
-Your account
+        <div className="container min-h-screen flex justify-center m-8">
+            <div className="content mt-12 text-4xl font-semibold">
+                Welcome to your Account!
+            </div>
         </div>
     );
 }
