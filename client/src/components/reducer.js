@@ -10,8 +10,8 @@ const reducer = (state, action) => {
         case 'ADD_TO_BASKET':
             return {
                 ...state,
-                basket: [...state.basket, action.item]
-            }
+                basket: [...state.basket, {...action.item, qty:1}]
+            };
         case 'REMOVE_FROM_CART':
             let newcart = [...state.basket]
             const index = state.basket.findIndex((basketItem) => basketItem.id === action.id)
@@ -20,7 +20,7 @@ const reducer = (state, action) => {
             }else{
                 console.log("Errors when removing product from cart")
             }
-            return {...state, basket: newcart}
+            return {...state, basket: newcart};
     }
 }
 
