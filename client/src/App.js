@@ -8,8 +8,9 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Cart from "./pages/Cart";
 import Shop from "./pages/Shop";
+import Account from "./pages/Account"
 
-function App(){
+function App() {
 
   const [books, setBooks] = useState([]);
 
@@ -18,14 +19,14 @@ function App(){
   }, []);
 
   const displayBooks = () => {
-      fetch('/books')
-          .then(response => response.json())
-          .then(users => {
-              setBooks(books);
-          })
-          .catch(error => {
-              console.log(error);
-          });
+    fetch('/books')
+      .then(response => response.json())
+      .then(users => {
+        setBooks(books);
+      })
+      .catch(error => {
+        console.log(error);
+      });
   };
 
   return (
@@ -37,6 +38,7 @@ function App(){
         <Route path="/login" element={<Login />} />
         <Route path="/shop" element={<Shop books={books} />} />
         <Route path="/cart" element={<Cart books={books} />} />
+        <Route path="/account" element={<Account />} />
       </Routes>
       < Footer />
     </div>

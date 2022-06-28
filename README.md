@@ -28,10 +28,8 @@ DB_PASS=YOUR_PASSWORD
 
 ### Development Servers
 
-- Run `npm start` in project directory to start the Express server on port 5000
-- `cd client` and run `npm start` to start client server in development mode with hot reloading in port 3000.
-- Test client with: `http://localhost:3000`
-- Test server with: `http://localhost:5000/`
+- Run `npm start` in project directory to start the Express server on port 5000.
+- `cd client` and run `npm start` to start client server in port 3000.
 
 ### Technologies
 
@@ -41,6 +39,8 @@ DB_PASS=YOUR_PASSWORD
 - Tailwind CSS
 - react-toastify
 - react-icons 
+- react-router-dom
+- react-currency-format
 
 ## Backend
 - MySQL 

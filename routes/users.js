@@ -37,11 +37,6 @@ router.post("/login", async (req, res) => {
     if (user) {
       const userId = user.id;
 
-      console.log(results);
-
-      console.log(typeof password);
-
-
       const passwordIsCorrect = await bcrypt.compare(password, user.password);
       if (!passwordIsCorrect) throw new Error("Incorrect password");
 
@@ -55,7 +50,7 @@ router.post("/login", async (req, res) => {
   }
 });
 
-// access protected route after a successful login
+// access protected data after a successful login
 router.get("/account", auth, (req, res) => {
   res.send({
     message: "Success" + req.userId,
