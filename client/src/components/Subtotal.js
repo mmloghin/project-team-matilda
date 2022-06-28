@@ -6,7 +6,7 @@ import { useStateValue } from "./StateProvider";
 function Subtotal(){
  
     const getCartTotal = (basket) =>
-    basket?.reduce((amount,item) => item.price + amount, 0);
+    basket?.reduce((amount,item) => amount + Number(item.price) * item.qty, 0);
 
     const [{basket}, dispatch] = useStateValue();   
 
