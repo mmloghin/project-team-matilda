@@ -12,7 +12,7 @@ const con = mysql.createConnection({
   user: DB_USER || "root",
   password: DB_PASS,
   port: DB_PORT,
-  database: DB_NAME || "books",
+  database: DB_NAME || "matilda",
   multipleStatements: true
 });
 
@@ -20,8 +20,8 @@ con.connect(function (err) {
   if (err) throw err;
   console.log("Connected!");
 
-  let sql = 
-  `DROP TABLE if exists books; CREATE TABLE books (id INT NOT NULL AUTO_INCREMENT, title VARCHAR(300), author VARCHAR(200), genre VARCHAR (200), pages VARCHAR(100), description VARCHAR(4000), image VARCHAR(200), price DECIMAL(19,2), featured BOOLEAN, PRIMARY KEY (id));
+  let sql =
+    `DROP TABLE if exists books; CREATE TABLE books (id INT NOT NULL AUTO_INCREMENT, title VARCHAR(300), author VARCHAR(200), genre VARCHAR (200), pages VARCHAR(100), description VARCHAR(4000), image VARCHAR(200), price DECIMAL(19,2), featured BOOLEAN, PRIMARY KEY (id));
   INSERT INTO books (title, author, genre, pages, description, image, price, featured) VALUES ("Harry Potter and the Philosopher's Stone", "J.K. Rowling", "Fantasy", "223", "A young boy's life changes one stormy night when a giant with a pink umbrella tells him he was born a wizard.", "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1170803558l/72193.jpg", "1.50", true);
   INSERT INTO books (title, author, genre, pages, description, image, price, featured) VALUES ("The Lord of the Rings", "J.R.R. Tolkein", "Fantasy", "1,178", "Hobbit Frodo Baggins leaves the security of his utopian home The Shire on a big adventure when his uncle leaves behind a magical ring.", "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1566425108i/33.jpg", "3.45", false);
   INSERT INTO books (title, author, genre, pages, description, image, price, featured) VALUES ("Eragon", "Christopher Paolini", "Fantasy", "509", "Farm boy Eragon discovers a beautiful blue stone in the woods and becomes a target of a jealous and greedy King.", "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1366212852i/113436.jpg", "4.50", false);
@@ -53,7 +53,8 @@ con.connect(function (err) {
   });
 
   // create users table 
-  let sqlUsers = `DROP TABLE if exists users; CREATE TABLE users(id INT NOT NULL AUTO_INCREMENT, email VARCHAR(100) not null unique, password VARCHAR(64) not null, created_at datetime not null default current_timestamp, PRIMARY KEY (id));`;
+  let sqlUsers =
+    `DROP TABLE if exists users; CREATE TABLE users(id INT NOT NULL AUTO_INCREMENT, email VARCHAR(100) not null unique, password VARCHAR(64) not null, created_at datetime not null default current_timestamp, PRIMARY KEY (id));`;
   con.query(sqlUsers, function (err, result) {
     if (err) throw err;
     console.log("Table creation `users` was successful!");
@@ -61,14 +62,30 @@ con.connect(function (err) {
     console.log("Closing...");
   });
 
-  //create cart table
-  // let sqlCart = `DROP TABLE if exists cart; CREATE TABLE cart(id INT NOT NULL AUTO_INCREMENT, order_id INT, price INT, PRIMARY KEY (id), FOREIGN KEY (order_id) REFERENCES books(id));`;
-  // con.query(sqlCart, function (err, result) {
-  //   if (err) throw err;
-  //   console.log("Table creation `cart` was successful!");
+  // create table cart
+  let sqlCart =
+    `DROP TABLE if exists cart;
+  CREATE TABLE cart(cart_id INT NOT NULL AUTO_INCREMENT, order_total INT NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY (cart_id));`;
+  con.query(sqlCart, function (err, result) {
+    if (err) throw err;
+    console.log("Table creation `cart` was successful!");
 
-  //   console.log("Closing...");
-  // });
+    console.log("Closing...");
+  });
+
+  // create table cart_item
+  let sqlCartItem =
+    `DROP TABLE if exists cart_item;
+  CREATE TABLE cart_item(cart_item_id INT NOT NULL AUTO_INCREMENT, cart_id INT NOT NULL, book_id INT NOT NULL, quantity INT NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY (cart_item_id); 
+  ALTER TABLE cart_item ADD CONSTRAINT cart_item_fk0 FOREIGN KEY(cart_id) REFERENCES cart(cart_id);
+  ALTER TABLE cart_item ADD CONSTRAINT cart_item_fk1 FOREIGN KEY(book_id) REFERENCES books(id);`;
+
+  con.query(sqlCartItem, function (err, result) {
+    if (err) throw err;
+    console.log("Table creation `cart_item` was successful!");
+
+    console.log("Closing...");
+  });
 
   con.end();
 });
