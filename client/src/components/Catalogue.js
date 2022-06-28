@@ -40,26 +40,6 @@ export default function Catalogue(props) {
                     book.author.toLowerCase().includes(search.toLowerCase()))).map((book) => (
                         <div key={book.id} className="group relative">
                             <Product book={book} />
-                            {/* <div className="w-full min-h-160 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
-                                <img
-                                    src={book.image}
-                                    alt="book cover"
-                                    className="w-full h-full object-center object-cover lg:w-full lg:h-full"
-                                />
-                            </div>
-                            <div className="mt-4 flex justify-between">
-                                <div>
-                                    <h3 className="text-sm text-gray-700">
-                                            <span aria-hidden="true" className="absolute inset-0" />
-                                            {book.title}
-                                    </h3>
-                                    <p className="mt-1 text-sm text-gray-500">{book.author}</p>
-                                    <p className="text-sm font-medium text-gray-900">${book.price}</p>
-                                </div>
-                                <button className="ml-10">
-                                    <MdShoppingCart />
-                                </button>
-                            </div> */}
                         </div>
                     ))}
             </div>
