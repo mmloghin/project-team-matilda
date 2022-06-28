@@ -30,10 +30,12 @@ function Cart() {
                                     price={item.price}
                                     />
                                 ))
+                                
                             }
-                        
                         </div>
+                        
                     )
+                    
                 }
                
             </div>

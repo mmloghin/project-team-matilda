@@ -5,10 +5,27 @@ import Featured from "../components/Featured";
 
 export default function Home(props) {
 
+  let [featuredBooks, setFeaturedBooks] = useState([]);
+
+  useEffect(() => {
+    displayFeaturedBooks();
+  }, []);
+
+  const displayFeaturedBooks = () => {
+      fetch('/books/featured')
+          .then(response => response.json())
+          .then(featuredBooks => {
+              setFeaturedBooks(featuredBooks);
+          })
+          .catch(error => {
+              console.log(error);
+          });
+  };
+
   return (
     <div>
       <Hero />
-      <Featured />
+      <Featured featuredBooks={featuredBooks} />
     </div>
   );
 }
