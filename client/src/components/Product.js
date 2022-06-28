@@ -21,15 +21,27 @@ function Product({ book }) {
     }
 
     return (
-        <div className="mt-5 text-center">
-            <img className="mb-5 hover:opacity-75" src={book.image} alt="cover" />
-            <div className="title mb-5 font-semibold">"{book.title}"</div>
-            <div className="mt-4">
-                {book.price}$
-                <button className="ml-10"
+
+        <div className="mt-5 items-center">
+            <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+                <img 
+                    className="w-full h-full object-center object-cover lg:w-full lg:h-full"
+                    src={book.image}
+                    alt="cover" 
+                />
+            </div>
+            <div className="flex justify-between">
+                <div>
+                    <p className="mb-1 mt-1 font-semibold">{book.title}</p>
+                    <p className="mb-1">{book.author}</p>
+                    <p className="mb-1">${book.price}</p>
+                </div>
+            <div className="mb-2 mt-2 ml-2 justify-right">
+                <button
                     onClick={() => addToBasket(book)}>
                     <MdShoppingCart />
                 </button>
+            </div>
             </div>
         </div>
     )

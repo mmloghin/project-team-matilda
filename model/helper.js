@@ -18,7 +18,7 @@ module.exports = async function db(query) {
       user: DB_USER || "root",
       password: DB_PASS,
       port: DB_PORT,
-      database: DB_NAME || "books",
+      database: DB_NAME || "matilda",
       multipleStatements: true
     });
 
