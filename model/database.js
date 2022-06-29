@@ -53,7 +53,7 @@ con.connect(function (err) {
     console.log("Closing...");
   });
 
-  let sqlFile = fs.file(__dirname+"/db.sql").toString();
+  let sqlFile = fs.readFileSync(__dirname+"/db.sql").toString();
   con.query(sqlFile, function(err, result) {
     if (err) throw err;
     console.log("Table creation was successful!");
