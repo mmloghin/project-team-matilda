@@ -16,7 +16,7 @@ function Subtotal(){
         <CurrencyFormat
           renderText={(value => (
             <p>
-                Subtotal({basket.length} items) : <strong>{`${value}`}</strong>
+                Cart Subtotal: <strong>{`${value}`}</strong>
             </p>
             )
           )}

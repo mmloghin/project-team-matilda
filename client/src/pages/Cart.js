@@ -4,7 +4,8 @@ import { useStateValue } from "../components/StateProvider";
 import Subtotal from "../components/Subtotal";
 import ProductCart from '../components/ProductCart';
 
-function Cart() {
+
+function Cart({qty}) {
 
     const [{ basket }] = useStateValue();
 
@@ -17,19 +18,32 @@ function Cart() {
                             Your shopping basket is empty </h2>
                         <p>Let's pick some books!</p>
                     </div>
-                ) : (
-                    <div>
-                        <h2 className="shopping__basket">
-                            Items in Cart </h2>
-                        {basket.map(item => (
-                            <ProductCart
-                                id={item.id}
-                                title={item.title}
-                                image={item.image}
-                                price={item.price}
-                            />
-                        ))
-                        }
+                    ) : (
+                        <div>
+                            <h2 className="shopping__basket">Items in Cart</h2>
+                            {
+                                basket.map(item => (
+                                    <ProductCart
+                                    id={item.id}
+                                    title={item.title}
+                                    image={item.image}
+                                    price={item.price}
+                                    qty={item.qty}
+                                    />
+                                ))
+                                
+                            }
+                        </div>
+                        
+                    )
+                    
+                }
+               
+            </div>
+            {
+                basket.length > 0 && (
+                    <div className="checkout__right">
+                        <Subtotal/>
                     </div>
                 )
                 }
