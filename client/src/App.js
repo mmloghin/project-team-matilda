@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
-import "./App.css";
 import NavBar from "./components/NavBar";
-import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Cart from "./pages/Cart";
 import Shop from "./pages/Shop";
+import Footer from "./components/Footer";
 import Account from "./pages/Account"
+
 
 function App() {
 

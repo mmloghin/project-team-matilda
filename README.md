@@ -16,12 +16,12 @@
 - Create `.env` file in project directory and add:
 
 ```
-DB_NAME=books
+DB_NAME=matilda
 DB_PASS=YOUR_PASSWORD
 ```
 - Type `mysql -u root -p` to access the MySQL CLI using your password.
 
-- In the MySQL CLI, type `create database books;` to create a database in MySQL.
+- In the MySQL CLI, type `create database matilda;` to create a database in MySQL.
 
 - In the MySQL CLI, type `npm run migrate;` to create all the tables.
 
@@ -50,6 +50,8 @@ DB_PASS=YOUR_PASSWORD
 
 
 ## DB Schema  
+
+![DB Schema](assets/../client/src/assets/db_schema.png)
 
 
 ## Notes

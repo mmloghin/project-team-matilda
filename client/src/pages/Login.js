@@ -7,12 +7,12 @@ import axios from "axios";
 
 export default function Login() {
 
-  const navigate = useNavigate();
-
   const [credentials, setCredentials] = useState({
     email: "",
     password: "",
   });
+
+  const navigate = useNavigate();
 
   const { email, password } = credentials;
 
@@ -57,7 +57,6 @@ export default function Login() {
   // const logout = () => {
   //   localStorage.removeItem("token");
   // };
-
 
   // const accessAccount = async () => {
   //   try {

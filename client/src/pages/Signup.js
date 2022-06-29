@@ -26,10 +26,11 @@ export default function Signup() {
         data: credentials,
       });
 
-      if (result.status === 200)
-          toast.success("Success!", {
-            position: toast.POSITION.BOTTOM_CENTER
-          });
+      if (result.status === 200) {
+        toast.success("Success!", {
+          position: toast.POSITION.BOTTOM_CENTER
+        });
+      }
 
     } catch (err) {
       console.log(err);
@@ -51,7 +52,7 @@ export default function Signup() {
 
   return (
     <div className="container min-h-screen font-medium flex justify-center -m-8">
-      <ToastContainer/>
+      <ToastContainer />
 
       <div className="content mt-12 flex flex-col items-center p-6 sm:p-12">
         <h2 className="heading text-2xl xl:text-3xl font-extrabold">

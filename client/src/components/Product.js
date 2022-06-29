@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from 'react'
 import '../App.css';
 import { useStateValue } from "./StateProvider";
 import { MdShoppingCart } from "react-icons/md";

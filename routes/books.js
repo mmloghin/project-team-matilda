@@ -26,6 +26,17 @@ router.get('/books', function(req, res, next) {
   .catch(err => res.status(500).send(err));
 })
 
+router.get("/books/:id", async (req, res) => {
+  let bookId = req.params.id;
+  let sql = `SELECT * FROM books WHERE id = ${bookId}`;
+  try {
+      let results = await db(sql);
+      res.send(results.data[0]);
+  } catch (err) {
+      res.status(500).send({ error: err.message });
+  }
+});
+
 /* GET featured books */
 
 router.get('/books/featured', function(req, res, next) {

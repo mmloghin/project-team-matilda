@@ -7,16 +7,15 @@ import ProductCart from '../components/ProductCart';
 
 function Cart({qty}) {
 
-    const [{basket}] = useStateValue();
+    const [{ basket }] = useStateValue();
 
     return (
         <div className="checkout">
             <div className="checkout__left">
-
-                {
-                    basket?.length === 0 ? (
-                        <div>
-                        <h2 className="checkout__title"> Your shopping basket is empty</h2>
+                {basket?.length === 0 ? (
+                    <div>
+                        <h2 className="checkout__title">
+                            Your shopping basket is empty </h2>
                         <p>Let's pick some books!</p>
                     </div>
                     ) : (
@@ -47,8 +46,14 @@ function Cart({qty}) {
                         <Subtotal/>
                     </div>
                 )
+                }
+            </div>
+            {basket.length > 0 && (
+                <div className="checkout__right">
+                    <Subtotal />
+                </div>
+            )
             }
-            
         </div>
     )
 }

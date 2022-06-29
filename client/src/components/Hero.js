@@ -12,7 +12,7 @@ export default function Hero() {
             <div className="text-indigo-400">& young adults.</div>
           </div>
           <div className="description max-w-md my-5 text-lg leading-loose">
-          Reading nurtures the imagination and sparks creativity. Explore our wide collection of modern and classic literature - pick your next book today & start a new adventure!
+            Reading nurtures the imagination and sparks creativity. Explore our wide collection of modern and classic literature - pick your next book today & start a new adventure!
           </div>
           <Link to="/shop" className="text-center inline-block w-full sm:w-48 py-3 font-semibold tracking-wide border-b-2 border-transparent text-white bg-gradient-to-br from-indigo-400 to-indigo-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-indigo-300 dark:focus:ring-indigo-800 font-medium rounded-lg">
             Shop Now
