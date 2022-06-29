@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import Catalogue from "../components/Catalogue";
-import { MdLibraryBooks } from "react-icons/md";
+import ShopHeader from "../images/MatildaShopImage.png";
 
 export default function Shop() {
 
@@ -24,17 +24,31 @@ export default function Shop() {
   return (
 
     <div>
-
-      <div className="content mt-10 flex flex-col items-center p-6 sm:p-6">
-          <h2 className="heading text-2xl xl:text-3xl font-extrabold">
-            Shop         
+      <div>
+          <h2 className="heading mt-18 text-2xl xl:text-5xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-200 to-indigo-800">
+            Shop
           </h2>
-          <p className="mt-10 text-base text-center">Sail the open seas, become a powerful wizard, and even rule over magical lands. Turn the page, your next adventure awaits!</p>
       </div>
-        
-      <Catalogue books={books} />
+      <div className="grid grid-cols-3 gap-4">
+        <div className="col-span-2 text-left">          
+          <p className="ml-40 mt-20 text-base">Sail the open seas, become a powerful wizard, and even rule over magical lands.</p><br/>
+          <p className="ml-40 mt-1 text-base">Turn the page, open your imagination.</p><br/>
+          <p className="ml-40 mt-1 font-semibold">Your next adventure awaits!</p>
+        </div>
+        <div className="col-span-1 justify-center mr-40">
+          <img 
+            className="object-scale-down scale-75"
+            src={ShopHeader}
+            alt="shop-header" 
+          />
+        </div>
+      </div>
+
+      <div>
+        <Catalogue books={books} />
+      </div>
 
     </div>
-      
+
   );
 }; 

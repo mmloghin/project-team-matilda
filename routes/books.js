@@ -24,7 +24,7 @@ router.get('/books', function(req, res, next) {
   db(`SELECT * FROM books;`)
   .then(results => res.send(results.data))
   .catch(err => res.status(500).send(err));
-})
+});
 
 router.get("/books/:id", async (req, res) => {
   let bookId = req.params.id;
@@ -41,6 +41,14 @@ router.get("/books/:id", async (req, res) => {
 
 router.get('/books/featured', function(req, res, next) {
   db(`SELECT * FROM books WHERE featured=true;`)
+  .then(results => res.send(results.data))
+  .catch(err => res.status(500).send(err));
+})
+
+/* GET genres */
+
+router.get('/books/genres', function(req, res, next) {
+  db(`SELECT genre FROM books;`)
   .then(results => res.send(results.data))
   .catch(err => res.status(500).send(err));
 })

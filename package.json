@@ -21,6 +21,7 @@
     "react-currency-format": "^1.1.0",
     "react-format-currency": "^0.1.2",
     "react-icons": "^4.4.0",
+    "react-select": "^5.3.2",
     "sequelize": "^6.21.1"
   },
   "devDependencies": {
