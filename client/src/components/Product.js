@@ -16,6 +16,7 @@ function Product({ book }) {
                 title: book.title,
                 image: book.image,
                 price: book.price,
+                qty: 0,
             }
         })
     }

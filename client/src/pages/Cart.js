@@ -4,7 +4,8 @@ import { useStateValue } from "../components/StateProvider";
 import Subtotal from "../components/Subtotal";
 import ProductCart from '../components/ProductCart';
 
-function Cart() {
+
+function Cart({qty}) {
 
     const [{basket}] = useStateValue();
 
@@ -28,6 +29,7 @@ function Cart() {
                                     title={item.title}
                                     image={item.image}
                                     price={item.price}
+                                    qty={item.qty}
                                     />
                                 ))
                                 
