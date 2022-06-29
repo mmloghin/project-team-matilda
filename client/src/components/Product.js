@@ -6,7 +6,11 @@ import { MdShoppingCart } from "react-icons/md";
 
 function Product({ book }) {
 
+
     const [basket, dispatch] = useStateValue();
+
+   const [disable, setDisable] = React.useState(false);
+
 
     const addToBasket = (book) => {
         dispatch({
@@ -38,10 +42,11 @@ function Product({ book }) {
                     <p className="mb-1">${book.price}</p>
                 </div>
             <div className="mb-2 mt-2 ml-2 justify-right">
-                <button
-                    onClick={() => addToBasket(book)}>
+                <button disabled={disable}
+                    onClick={() => { addToBasket(book); setDisable(true);}}>
                     <MdShoppingCart />
                 </button>
+                
             </div>
             </div>
         </div>
