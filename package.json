@@ -1,5 +1,5 @@
 {
-  "name": "project-team-happydays",
+  "name": "project-team-matilda",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -7,14 +7,23 @@
     "migrate": "node model/database.js"
   },
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^16.0.1",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
+    "jsonwebtoken": "^8.5.1",
     "morgan": "~1.9.1",
+    "multiselect-react-dropdown": "^2.0.25",
     "mysql": "^2.18.1",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "react-currency-format": "^1.1.0",
+    "react-format-currency": "^0.1.2",
+    "react-icons": "^4.4.0",
+    "sequelize": "^6.21.1"
   },
-  "proxy": "http://localhost:5000"
+  "devDependencies": {
+    "react-router-dom": "^6.3.0"
+  }
 }
