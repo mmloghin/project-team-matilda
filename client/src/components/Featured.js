@@ -51,7 +51,7 @@ export default function Featured(props) {
 
       <div className="flex flex-col items-center lg:items-stretch lg:flex-row">
 
-        {props.featuredBooks.map((book) => (
+        {props.featuredBooks && props.featuredBooks.map((book) => (
           <div className="cards mt-5 lg:w-1/5 xl:mx-6 rounded-md overflow-hidden"
             key={book.id}>
             <Product book={book} />

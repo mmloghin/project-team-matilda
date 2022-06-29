@@ -51,6 +51,8 @@ DB_PASS=YOUR_PASSWORD
 
 ## DB Schema  
 
+![DB Schema](assets/../client/src/assets/db_schema.png)
+
 
 ## Notes
 

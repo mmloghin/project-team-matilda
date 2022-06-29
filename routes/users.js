@@ -8,6 +8,32 @@ const saltRound = 10;
 const secretKey = process.env.SECRET_KEY;
 require("dotenv").config();
 
+
+const sendAllUsers = (req, res) => {
+  db(`SELECT * FROM users ORDER BY id ASC;`)
+    .then(results => {
+      res.send(results.data);
+    })
+    .catch(err => res.status(500).send(err));
+};
+
+// get all users
+router.get("/", async (req, res) => {
+  sendAllUsers(req, res);
+});
+
+// get user by id
+router.get("/:id", async (req, res) => {
+  let userId = req.params.id;
+  let sql = `SELECT * FROM users WHERE id = ${userId}`;
+  try {
+    let results = await db(sql);
+    res.send(results.data[0]);
+  } catch (err) {
+    res.status(500).send({ error: err.message });
+  }
+});
+
 // register a new user account and verify
 router.post("/register", async (req, res) => {
   const { email, password, confirmPassword } = req.body;
@@ -25,7 +51,7 @@ router.post("/register", async (req, res) => {
   }
 });
 
-// verify login
+// verify login, save the token and user id
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
 
@@ -41,7 +67,7 @@ router.post("/login", async (req, res) => {
       if (!passwordIsCorrect) throw new Error("Incorrect password");
 
       const token = jwt.sign({ userId }, secretKey);
-      res.send({ message: "Login was successful", token });
+      res.send({ message: "Login was successful", token, userId });
     } else {
       throw new Error("User does not exist");
     }

@@ -1,5 +1,6 @@
 require("dotenv").config();
 const mysql = require("mysql");
+const fs = require("fs");
 
 const DB_HOST = process.env.DB_HOST;
 const DB_USER = process.env.DB_USER;
@@ -52,42 +53,20 @@ con.connect(function (err) {
     console.log("Closing...");
   });
 
-  // create users table 
-  let sqlUsers =
-    `DROP TABLE if exists users; CREATE TABLE users(id INT NOT NULL AUTO_INCREMENT, email VARCHAR(100) not null unique, password VARCHAR(64) not null, created_at datetime not null default current_timestamp, PRIMARY KEY (id));`;
-  con.query(sqlUsers, function (err, result) {
+  let sqlFile = fs.file(__dirname+"/db.sql").toString();
+  con.query(sqlFile, function(err, result) {
     if (err) throw err;
-    console.log("Table creation `users` was successful!");
-
-    console.log("Closing...");
-  });
-
-  // create table cart
-  let sqlCart =
-    `DROP TABLE if exists cart;
-  CREATE TABLE cart(cart_id INT NOT NULL AUTO_INCREMENT, order_total INT NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY (cart_id));`;
-  con.query(sqlCart, function (err, result) {
-    if (err) throw err;
-    console.log("Table creation `cart` was successful!");
-
-    console.log("Closing...");
-  });
-
-  // create table cart_item
-  let sqlCartItem =
-    `DROP TABLE if exists cart_item;
-  CREATE TABLE cart_item(cart_item_id INT NOT NULL AUTO_INCREMENT, cart_id INT NOT NULL, book_id INT NOT NULL, quantity INT NOT NULL, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY (cart_item_id); 
-  ALTER TABLE cart_item ADD CONSTRAINT cart_item_fk0 FOREIGN KEY(cart_id) REFERENCES cart(cart_id);
-  ALTER TABLE cart_item ADD CONSTRAINT cart_item_fk1 FOREIGN KEY(book_id) REFERENCES books(id);`;
-
-  con.query(sqlCartItem, function (err, result) {
-    if (err) throw err;
-    console.log("Table creation `cart_item` was successful!");
+    console.log("Table creation was successful!");
 
     console.log("Closing...");
   });
 
   con.end();
 });
+
+
+
+
+
 
 
