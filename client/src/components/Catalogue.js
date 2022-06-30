@@ -4,7 +4,7 @@ import Product from "./Product";
 import '../App.css';
 import CategoryFilter from "./CategoryFilter";
 
-export default function Catalogue({books}) {
+export default function Catalogue(props) {
 
     const [search, setSearch] = useState("");
     const [bookGenre, setBookGenre] = useState("All");
@@ -29,7 +29,7 @@ export default function Catalogue({books}) {
             <div className="search__container">
 
                 <form>
-                    <div class="mb-6 mr-6px flex justify-center">
+                    <div className="mb-6 mr-6px flex justify-center">
                         <div className="place-items-center pr-2">
                             <MdManageSearch size="2.5rem"/>
                         </div>
@@ -45,7 +45,7 @@ export default function Catalogue({books}) {
             </div>
 
             <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-                {books.filter((book) => (book.title.toLowerCase().includes(search.toLowerCase()) ||
+                {props.books.filter((book) => (book.title.toLowerCase().includes(search.toLowerCase()) ||
                     book.genre.toLowerCase().includes(search.toLowerCase()) ||
                     book.author.toLowerCase().includes(search.toLowerCase())))
                     .filter(book => {

@@ -41,7 +41,10 @@ router.get("/books/:id", async (req, res) => {
 
 router.get('/books/featured', function(req, res, next) {
   db(`SELECT * FROM books WHERE featured=true;`)
-  .then(results => res.send(results.data))
+  .then(results => {
+    console.log(results.data, "Results founded")
+    res.send(results.data)
+  })
   .catch(err => res.status(500).send(err));
 })
 
