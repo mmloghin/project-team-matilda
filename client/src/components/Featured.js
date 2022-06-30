@@ -31,6 +31,34 @@ export default function Featured(props) {
       image: "https://www.popularlibros.com/imagenes.webp_grandes/9781447/978144727999.webp",
       author: "Lewis Carroll",
       price: 3.75
+    },
+    {
+      id: 5,
+      title: "How the Grinch Stole Christmas",
+      image: "https://images.cdn1.buscalibre.com/fit-in/360x360/07/9d/079d73be3c83f2b21263a0eddcd534dc.jpg",
+      author: "Dr.Seuss",
+      price: 3.75
+    },
+    {
+      id: 6,
+      title: "Matilda",
+      image: "https://kbimages1-a.akamaihd.net/3c028f3e-c91b-4b60-8e3a-0fe7b56365b8/1200/1200/False/matilda-2.jpg",
+      author: "Roald Dahl",
+      price: 2.75
+    },
+    {
+      id: 7,
+      title: "The Chronicles of Narnia",
+      image: "https://images-na.ssl-images-amazon.com/images/I/71kkZJGvq5L.jpg",
+      author: "Lewis",
+      price: 3.75
+    },
+    {
+      id: 8,
+      title: "The Hobbit",
+      image: "https://images-na.ssl-images-amazon.com/images/I/710+HcoP38L.jpg",
+      author: "Tolkien",
+      price: 3.75
     }
   ]
 
