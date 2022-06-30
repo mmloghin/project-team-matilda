@@ -2,30 +2,12 @@ import React, {useState, useEffect} from "react";
 import Hero from "../components/Hero";
 import Featured from "../components/Featured";
 
-export default function Home(props) {
-
-  let [featuredBooks, setFeaturedBooks] = useState([]);
-
-  useEffect(() => {
-    displayFeaturedBooks();
-  }, []);
-
-  const displayFeaturedBooks = () => {
-      fetch('/books/featured')
-          .then(response => response.json())
-          .then(featuredBooks => {
-              setFeaturedBooks(featuredBooks);
-              console.log(featuredBooks);
-          })
-          .catch(error => {
-              console.log(error);
-          });
-  };
+export default function Home() {
 
   return (
     <div>
       <Hero />
-      <Featured featuredBooks={featuredBooks} />
+      <Featured />
     </div>
   );
 }
