@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { FaBook } from 'react-icons/fa';
 
 export default function CategoryFilter(props) {
 
