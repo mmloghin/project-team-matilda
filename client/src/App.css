@@ -1,0 +1,299 @@
+
+/* @import url("https://fonts.googleapis.com/css2?family=Fresca&display=swap");
+
+* {
+  margin: 0;
+  font-family: "Fresca", cursive, Arial, Helvetica, sans-serif;
+}
+
+.header {
+  background-color: rgb(230, 223, 227);
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 10px;
+}
+
+.header__logo {
+  width: 100px;
+  margin: 0 20px;
+  margin-top: 18px;
+  object-fit: contain;
+}
+
+.header__search {
+  display: flex;
+  flex: 1;
+}
+
+.header__searchInput {
+  height: 12px;
+  padding: 10px;
+  border: none;
+  width: 100%;
+}
+
+.header__searchIcon {
+  padding: 5px;
+  height: 22px !important;
+  background-color: rgb(228, 228, 228);
+  border: 1px solid rgb(94, 94, 94);
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.header__link {
+  color: rgb(94, 94, 94);
+  text-decoration: none;
+}
+
+.header__option {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.header__optionLineOne {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.header__optionLineTwo {
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.header__optionBasket {
+  display: flex;
+  align-items: center;
+}
+
+.header__basketCount {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.login {
+  background-color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login__logo {
+  width: 300px;
+  object-fit: contain;
+  margin-top: 60px;
+}
+
+.login__container {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 5px solid rgb(230, 223, 227);
+}
+
+.login__signInButton,
+.login__registrationButton {
+  background-color: rgb(230, 223, 227);
+  border: 5px;
+  margin-top: 10px;
+  margin-left: 10px;
+  height: 30px;
+  border-radius: 2px;
+  color: rgb(94, 94, 94);
+}
+
+.login__container p {
+  margin-top: 15px;
+  font-size: 12px;
+}
+
+.login__container h1 {
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.login__container h5 {
+  margin-bottom: 5px;
+}
+
+.login__container input {
+  height: 30px;
+  margin-bottom: 10px;
+  background-color: white;
+  width: 98%;
+}
+
+.home {
+  max-width: 1500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home h1 {
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+  color: rgb(100, 83, 93);
+  font-size: 35px;
+  font-weight: 800;
+}
+
+.home__image {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.home__row {
+  display: flex;
+  z-index: 1;
+  margin-right: 5px;
+  margin-left: 5px;
+} */
+
+/* .product {
+  display: flex;
+  flex-direction: column;
+  max-height: 400px;
+  min-width: 100px;
+  margin: 10px;
+  z-index: 1;
+  width: 100%;
+  padding: 20px;
+  justify-content: flex-end;
+}
+
+.product__info {
+  height: 100px;
+  margin-bottom: 15px;
+} */
+
+/* .product__rating {
+  display: flex;
+}
+
+
+
+.product__price {
+  margin-top: 5px;
+} */
+
+/* .product img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  margin-bottom: 15px;
+} */
+
+/* .product button {
+  background-color: rgb(230, 223, 227);
+  border-radius: 2px;
+  color: rgb(94, 94, 94);
+} */
+
+/* .checkout {
+  display: flex;
+  padding: 20px;
+  background-color: white;
+  height: max-content;
+}
+
+.checkout__title {
+  margin-right: 10px;
+  padding: 10px;
+  border-bottom: 1px solid lightgray;
+}
+
+.footer {
+  background-color: rgb(230, 223, 227);
+  width: 100%;
+  min-height: 100px;
+  padding: 20px;
+}
+
+.footer__links {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+} */
+
+.productcart {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.productcart__image {
+  object-fit: contain;
+  width: 150px;
+  height: 150px;
+}
+
+.productcart__title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.productcart__info {
+  padding-left: 20px;
+}
+
+.productcart__info button {
+  background-color: rgb(59 130 246);
+  border: 1px solid;
+  margin-top: 10px;
+  border-color: rgb(255, 254, 254);
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  font-weight: 500;
+}
+
+.subtotal button {
+  background-color: rgb(253, 186, 2);
+  border: 1px solid;
+  margin-top: 10px;
+  margin-left: 20px;
+  border-color: rgb(241, 242, 243);
+  padding: 5px;
+  border-radius: 5px;
+  color: rgb(12, 12, 12);
+  font-weight: 500;
+}
+
+.checkout {
+  padding: 20px;
+  height: max-content;
+}
+
+.checkout__title {
+  margin-right: 10px;
+  padding: 10px;
+  border-bottom: 1px solid lightgray;
+}
+
+.product button {
+  background-color: rgb(59 130 246);
+  border-radius: 5px;
+  color: white;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  display: block;
+  width: 100%;
+}
